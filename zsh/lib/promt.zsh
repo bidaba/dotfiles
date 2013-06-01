@@ -15,8 +15,8 @@ promptinit
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr '*'   # display this when there are unstaged changes
 zstyle ':vcs_info:*' stagedstr '+'  # display this when there are staged changes
-zstyle ':vcs_info:*' actionformats '[%b%|%a%c%u%]'
-zstyle ':vcs_info:*' formats '%b%c%u'
+zstyle ':vcs_info:*' actionformats '[%b%|%a%c%u%] '
+zstyle ':vcs_info:*' formats '[%b%c%u] '
 
 
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
@@ -26,6 +26,6 @@ function prompt_char {
 	if [ $UID -eq 0 ]; then echo "#"; else echo $; fi
 }
 
-PROMPT='%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) [${vcs_info_msg_0_}] $(prompt_char)%{$reset_color%} '
+PROMPT='%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) ${vcs_info_msg_0_}$(prompt_char)%{$reset_color%} '
 
 # PROMPT='[%n@%m %~${vcs_info_msg_0_}] %{$reset_color%}'
