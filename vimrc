@@ -36,3 +36,7 @@ au FileType make setlocal noexpandtab
 " JSON: use Javascript syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 
+" Enable undo for line/word deletions in insert mode
+inoremap <c-u> <c-g>u<c-u>
+inoremap <c-w> <c-g>u<c-w>
+
